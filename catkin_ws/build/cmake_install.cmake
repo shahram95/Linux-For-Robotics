@@ -136,6 +136,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/shahram/Desktop/Linux-For-Robotics/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/shahram/Desktop/Linux-For-Robotics/catkin_ws/build/teleop_twist_keyboard/cmake_install.cmake")
+  include("/home/shahram/Desktop/Linux-For-Robotics/catkin_ws/build/move_bb8_pkg/cmake_install.cmake")
 
 endif()
 
