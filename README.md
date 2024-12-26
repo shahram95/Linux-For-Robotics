@@ -16,7 +16,7 @@ Note: for some reason this was not working on the HDD only on the SSD on the Des
 
 	* Go to the simulation_ws: cd ~/Desktop/0_linux_for_robotics/simulation_ws
 	* execute: catkin_make
-	* execute: git clone https://shahram95@bitbucket.org/theconstructcore/bb8.git
+	* execute: git clone git@github.com:shahram95/bb8.git
 	* Alternatively to step(c): copy all the files from the existing simulation_ws to the new simulation_ws
 	* Go to the main ws (just before the src) by executing: roscd; cd .. and execute: catkin_make
 	* If the catkin_make fails, it might be due to dependencies issue, read the prompt and if it is a dependency error then execute: 
