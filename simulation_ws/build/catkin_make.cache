@@ -1,0 +1,2 @@
+bb8/bb8_tests:bb8/bb_8_description:bb8/bb_8_gazebo:bb8/bb_8_teleop:bb8/pub_odom
+-DCATKIN_DEVEL_PREFIX=/home/shahram/Desktop/Linux-For-Robotics/simulation_ws/devel -DCMAKE_INSTALL_PREFIX=/home/shahram/Desktop/Linux-For-Robotics/simulation_ws/install -G Unix Makefiles
