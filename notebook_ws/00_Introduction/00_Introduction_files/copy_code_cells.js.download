@@ -1,0 +1,38 @@
+// Add a 'copy this' button to every code cell
+// the bottons are added just before the code cells with the classes
+// specified in 'selectors'
+function domLoaded() {
+    let selectors = [".hl-ipython2", ".hl-ipython3"];
+    let html = "<button title='Copy this code' class='copy-code-btn' style='position: absolute; top: 5px; right: 5px;"
+    html += "color: lightseagreen; font-weight: bold;'><i class='fa fa-clipboard' aria-hidden='true'></i></button>";
+    let cells;
+    for (let selector of selectors) {
+        cells = [];
+        cells = document.querySelectorAll(selector);
+        cells.forEach(cell => cell.insertAdjacentHTML("beforebegin", html));
+    }
+}
+
+// what to do when the DOM has loaded
+document.addEventListener("DOMContentLoaded", domLoaded);
+
+// add the logic for copying the content of the code cells to the clipboard
+// courtesy of https://clipboardjs.com/
+var clipboard = new ClipboardJS('.copy-code-btn', {
+    target: function(trigger) {
+        return trigger.nextElementSibling;
+    }
+});
+
+// what do do after the item has been copied to the clipboard
+clipboard.on('success', function(e) {
+    var trigger = e.trigger;
+    e.clearSelection();
+    var btnTextBackup = trigger.innerHTML;
+    trigger.disabled = true;
+    trigger.innerText = 'Copied!';
+    setTimeout(() => {
+        trigger.innerHTML = btnTextBackup;
+        trigger.disabled = false;
+    }, 2000);
+});
